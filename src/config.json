@@ -6,18 +6,7 @@
   "imgUrl": "logo.png",
   "version": "1.0.0",
   "description": "Handles Okta Event Hooks",
-  "settings": [
-    {
-      "name":"orgUrl",
-      "viewName":"Okta Org URL",
-      "type":"string"
-    },
-    {
-        "name":"token",
-        "viewName":"API Token",
-        "type":"vault"
-    }
-  ],
+  "settings": [],
   "methods": [
     {
       "name": "alert",

@@ -9,7 +9,6 @@
   "license": "ISC",
   "author": "Kaholo Group(Amit Alon)",
   "dependencies": {
-    "micromatch": "^4.0.4",
-    "@okta/okta-sdk-nodejs": "^5.0.0"
+    "micromatch": "^4.0.4"
   }
 }

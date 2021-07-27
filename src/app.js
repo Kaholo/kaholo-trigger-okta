@@ -1,10 +1,8 @@
 const micromatch = require("micromatch");
 const parsers = require("./parsers");
-const {getClient} = require("./helpers");
 
 async function alert(req, res, settings, triggerControllers) {
   try {
-    res.set('Authorization', settings.token);
     const events = req.body.data.events;
     events.forEach(event => {
       const eventType = event.eventType;
@@ -33,11 +31,6 @@ async function verify(req, res, settings, triggerControllers) {
   try {
     const reqChanllenge = req.headers['x-okta-verification-challenge'];
     if (reqChanllenge){
-      /*const client = getClient(settings);
-      // copy authorazation from Okta client
-      Object.keys(client.http.defaultHeaders).forEach(key => {
-        res.set(key, client.http.defaultHeaders[key]);
-      });*/
       res.status(200).send({"verification" : reqChanllenge});
       triggerControllers.forEach((trigger) => {
         trigger.execute(`Okta Verified Event Hook`, req.body || {});
