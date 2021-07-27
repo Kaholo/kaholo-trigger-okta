@@ -1,0 +1,67 @@
+{
+  "name": "Okta-Trigger",
+  "type": "trigger",
+  "execProgram": "node",
+  "main": "app.js",
+  "imgUrl": "logo.png",
+  "version": "1.0.0",
+  "description": "Handles Okta Event Hooks",
+  "settings": [],
+  "methods": [
+    {
+      "name": "alert",
+      "route": "post /webhook/okta/event",
+      "viewName": "Catch Event",
+      "params": [
+        {
+          "name": "alertEventTypes",
+          "viewName": "Event Types",
+          "type": "text"
+        },
+        {
+          "name": "alertSeverity",
+          "viewName": "Event Severity",
+          "type": "options",
+          "options": 
+          [
+            {
+              "id": "Any",
+              "name": "Any"
+            },
+            {
+              "id": "DEBUG",
+              "name": "Debug"
+            },
+            {
+              "id": "INFO",
+              "name": "Info"
+            },
+            {
+              "id": "WARN",
+              "name": "Warning"
+            },
+            {
+              "id": "ERROR",
+              "name": "Error"
+            },
+            {
+              "id": "FATAL",
+              "name": "Fatal"
+            }
+          ]
+        },
+        {
+          "name": "includeHigherPriority",
+          "viewName": "Include Higher Priority",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "verify",
+      "route": "get /webhook/okta/event",
+      "viewName": "Verify",
+      "params": []
+    }
+  ]
+}
