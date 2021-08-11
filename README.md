@@ -11,7 +11,7 @@ After installing the trigger on your kaholo server, create a new Event hook to t
 Triggers when an event is sent to this method's webhook URL using POST HTTP method.
 
 ### Parameters
-1. Event Types (Text) **Optional** - The event types to catch in this trigger. Can specify multiple event types by seperating each with a new line.
+1. Event Types Patterns (Text) **Optional** - The event types to catch in this trigger. Can specify multiple event types by seperating each with a new line.
 2. Event Severity (Options) **Optional** - The alert severity to catch in the trigger. Possible values: Any | Debug | Info | Warning | Error | Fatal.
 Default Value is Any.
 3. Include Higher Priority (Boolean) **Optional** - If true, also accept any events with a higher priority than the one specified in event severity. *Only relevant in case severity is not any.*

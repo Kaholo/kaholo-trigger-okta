@@ -15,7 +15,7 @@
       "params": [
         {
           "name": "alertEventTypes",
-          "viewName": "Event Types",
+          "viewName": "Event Types Patterns",
           "type": "text"
         },
         {
