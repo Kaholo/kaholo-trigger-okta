@@ -4,7 +4,7 @@
   "execProgram": "node",
   "main": "app.js",
   "imgUrl": "logo.png",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Handles Okta Event Hooks",
   "settings": [],
   "methods": [
@@ -51,8 +51,8 @@
           ]
         },
         {
-          "name": "includeHigherPriority",
-          "viewName": "Include Higher Priority",
+          "name": "includeHigherSeverity",
+          "viewName": "Include Higher Severity",
           "type": "boolean"
         }
       ]
@@ -60,7 +60,7 @@
     {
       "name": "verify",
       "route": "get /webhook/okta/event",
-      "viewName": "Verify",
+      "viewName": "Verify(Doesn't Trigger!)",
       "params": []
     }
   ]
