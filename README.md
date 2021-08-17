@@ -16,3 +16,8 @@ Triggers when an event is sent to this method's webhook URL using POST HTTP meth
 2. Event Severity (Options) **Optional** - The alert severity to catch in the trigger. Possible values: Any | Debug | Info | Warning | Error | Fatal.
 Default Value is Any.
 3. Include Higher Severity (Boolean) **Optional** - If true, also accept any events with a higher severity than the one specified in event severity. *Only relevant in case severity is not any.*
+
+## Method: Verify
+Triggers when this webhook is verified as an Okta event hook.
+
+### Parameters: None
