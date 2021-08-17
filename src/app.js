@@ -27,13 +27,20 @@ async function alert(req, res, settings, triggerControllers) {
   }
 }
 
-async function verify(req, res) {
-  const reqChanllenge = req.headers['x-okta-verification-challenge'];
-  if (reqChanllenge){
-    res.status(200).send({"verification" : reqChanllenge});
-  }
-  else {
+async function verify(req, res, settings, triggerControllers) {
+  try {
+    const reqChanllenge = req.headers['x-okta-verification-challenge'];
+    if (reqChanllenge){
+      res.status(200).send({"verification" : reqChanllenge});
+      triggerControllers.forEach((trigger) => {
+        trigger.execute(`Okta Verified Event Hook`, req.body || {});
+      });
+      return "Okta Event Hook Verified";
+    }
     res.status(422).send("Unknown Request Format");
+  }
+  catch (err){
+    res.status(422).send(err.message || JSON.stringify(err));
   }
 }
 
