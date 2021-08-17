@@ -4,7 +4,7 @@
   "execProgram": "node",
   "main": "app.js",
   "imgUrl": "logo.png",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Handles Okta Event Hooks",
   "settings": [],
   "methods": [
@@ -60,7 +60,7 @@
     {
       "name": "verify",
       "route": "get /webhook/okta/event",
-      "viewName": "Verify(Doesn't Trigger!)",
+      "viewName": "Verify",
       "params": []
     }
   ]
